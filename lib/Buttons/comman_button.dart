@@ -1,39 +1,79 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CommanButton extends StatelessWidget {
-  const CommanButton(
-      {super.key,
-      required this.text,
-      required this.onClick,
-      this.color,
-      this.icon,
-      this.foreGroundColor,
-      this.textColor,
-      required this.fontSize});
+  const CommanButton({
+    super.key,
+    required this.text,
+    required this.onClick,
+    this.color,
+    this.svgImage,
+    this.textColor,
+    this.borderSide,
+    this.padding,
+    required this.fontSize,
+    this.height,
+    this.width,
+  });
+
   final String text;
   final Color? color;
-  final IconData? icon;
-  final Color? foreGroundColor;
+  final double? height;
+  final double? width;
+  final String? svgImage;
   final Color? textColor;
   final double fontSize;
+  final BorderSide? borderSide;
+  final EdgeInsets? padding;
   final VoidCallback onClick;
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.all(18.0),
-        child: SizedBox(
-          height: 60,
-          width: double.infinity,
-          child: OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                side: BorderSide.none,
-                backgroundColor: color,
+    return SizedBox(
+      height: height,
+      width: width,
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(
+          side: borderSide ?? BorderSide.none,
+          backgroundColor: color,
+        ),
+        onPressed: onClick,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 40),
+          child: Row(
+            children: [
+              Padding(
+                padding: padding ?? EdgeInsets.zero,
+                child: SvgPicture.asset(
+                  svgImage!,
+                  height: 20,
+                  width: 20,
+                ),
               ),
-              onPressed: onClick,
-              child: Text(
+              SizedBox(
+                width: 20,
+              ),
+              Text(
+                // textAlign: TextAlign.center,
                 text,
-                style: TextStyle(color: textColor),
-              )),
-        ));
+                style: TextStyle(
+                  color: textColor,
+                  fontSize: fontSize,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
+// if (svgImage != null)
+//   Padding(
+//     padding: const EdgeInsets.only(),
+//     child: SvgPicture.asset(
+//       svgImage!,
+//       height: 20,
+//       width: 20,
+//     ),
+//   ),

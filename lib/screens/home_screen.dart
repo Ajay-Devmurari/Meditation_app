@@ -3,8 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditaion_app/Buttons/comman_button.dart';
 import 'package:meditaion_app/screens/signup_screen.dart';
 
-
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -35,7 +33,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           const Text('Silent ',
                               style: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold)),
-                          SvgPicture.asset("assets/logo.svg" , height: 20,width: 20,),
+                          SvgPicture.asset(
+                            "assets/logo.svg",
+                            height: 20,
+                            width: 20,
+                          ),
                           const Text(' Moon',
                               style: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold)),
@@ -77,13 +79,18 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 20,
             ),
-             CommanButton(
-              text: 'SIGN UP',
-              color:const Color.fromARGB(255, 142, 151, 253),
-              textColor: const Color.fromARGB(255, 246, 241, 251),
-              fontSize: 18,
-                 onClick: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SignupScreen(),));}
-            ),
+            CommanButton(
+                text: 'SIGN UP',
+                color: const Color.fromARGB(255, 142, 151, 253),
+                textColor: const Color.fromARGB(255, 246, 241, 251),
+                fontSize: 18,
+                onClick: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUpScreen(),
+                      ));
+                }),
             const SizedBox(
               height: 20,
             ),
