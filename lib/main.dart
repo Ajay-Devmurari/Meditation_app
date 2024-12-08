@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:meditaion_app/screens/signup_screen.dart';
+import 'package:meditaion_app/screens/login_screen.dart';
 import 'package:meditaion_app/screens/home_screen.dart';
+import 'package:meditaion_app/screens/login_screen.dart';
 import 'package:meditaion_app/screens/signup_screen.dart';
+import 'package:meditaion_app/screens/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +37,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const SignUpScreen(),
-
     );
   }
 }

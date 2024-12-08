@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:meditaion_app/Buttons/circle_button.dart';
+import 'package:meditaion_app/screens/signup_screen.dart';
+import 'package:meditaion_app/screens/welcome_screen.dart';
 
-import '../Buttons/circle_button.dart';
 import '../Buttons/comman_button.dart';
 import '../textbox/custom_textbox.dart';
-import 'welcome_screen.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
@@ -46,7 +47,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     child: Column(
                       children: [
                         const Text(
-                          'Create your account',
+                          'Welcome Back !',
                           style: TextStyle(
                               fontSize: 28,
                               fontWeight: FontWeight.bold,
@@ -84,47 +85,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         SizedBox(
                           height: height * 0.04,
                         ),
-                        const CustomTextBox(
-                            text: 'Tony Stark',
-                            icon: Icons.done_rounded,
-                            color: Colors.green),
+                        const CustomTextBox(text: 'Email address'),
                         SizedBox(
                           height: height * 0.03,
                         ),
                         const CustomTextBox(
-                            text: 'TonyStark@gmail.com',
-                            icon: Icons.done_rounded,
-                            color: Colors.green),
-                        SizedBox(
-                          height: height * 0.03,
-                        ),
-                        const CustomTextBox(
-                            text: '*********',
+                            text: 'Password',
                             icon: Icons.visibility_off,
                             color: Colors.black),
                         const SizedBox(
                           height: 22,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            const Text('I have read the '),
-                            GestureDetector(
-                                onTap: () {},
-                                child: const Text(
-                                  'Privacy Policy',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color:
-                                          Color.fromARGB(255, 117, 131, 202)),
-                                )),
-                          ],
-                        ),
-                        SizedBox(height: height * 0.14),
                         CommanButton(
-                          fontColor: Colors.white,
-                          text: 'GET STARTED',
-                          color: Color.fromARGB(255, 142, 151, 253),
+                          text: 'LOG IN',
                           onClick: () {
                             Navigator.push(
                                 context,
@@ -133,6 +106,34 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ));
                           },
                         ),
+                        const SizedBox(
+                          height: 22,
+                        ),
+                        const Text(
+                          'Forgot Password?',
+                          style: TextStyle(
+                            fontSize: 14,
+                          ),
+                        ),
+                        SizedBox(
+                          height: height * 0.18,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text("DON'T HAVE AN ACCOUNT?"),
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const SignUpScreen(),
+                                      ));
+                                },
+                                child: const Text('SIGN UP'))
+                          ],
+                        )
                       ],
                     ),
                   ),
