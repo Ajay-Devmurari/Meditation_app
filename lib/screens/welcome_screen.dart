@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:meditaion_app/screens/selection_screen.dart';
 import 'package:meditaion_app/screens/signup_screen.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../Buttons/comman_button.dart';
 
@@ -10,7 +12,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
-    final double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: Stack(children: [
         SvgPicture.asset(
@@ -96,13 +98,13 @@ class WelcomeScreen extends StatelessWidget {
               CommanButton(
                 color: Colors.white,
                 fontColor: Colors.black,
-                text: 'LOG IN',
+                text: 'GET STARTED',
                 onClick: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => const SignUpScreen(),
-                      ));
+                      PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: SelectionScreen()));
                 },
               ),
             ],

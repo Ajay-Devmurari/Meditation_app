@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditaion_app/Buttons/comman_button.dart';
 import 'package:meditaion_app/screens/login_screen.dart';
 import 'package:meditaion_app/screens/signup_screen.dart';
-import 'package:meditaion_app/screens/welcome_screen.dart';
+import 'package:page_transition/page_transition.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,9 +16,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
-    final double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: Colors.white,
       body: Column(
         children: <Widget>[
           Stack(
@@ -89,14 +89,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 CommanButton(
                   fontColor: Colors.white,
-                  color: Color.fromARGB(255, 142, 151, 253),
+                  color: const Color.fromARGB(255, 142, 151, 253),
                   text: 'LOG IN',
                   onClick: () {
                     Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => const WelcomeScreen(),
-                        ));
+                        PageTransition(
+                            type: PageTransitionType.rightToLeft,
+                            child: LoginScreen()));
                   },
                 ),
                 SizedBox(height: height * 0.14),
@@ -108,9 +108,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         onPressed: () {
                           Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                builder: (context) => const SignUpScreen(),
-                              ));
+                              PageTransition(
+                                  type: PageTransitionType.rightToLeft,
+                                  child: SignUpScreen()));
                         },
                         child: const Text('SIGN UP'))
                   ],

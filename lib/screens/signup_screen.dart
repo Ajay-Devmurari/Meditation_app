@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../Buttons/circle_button.dart';
 import '../Buttons/comman_button.dart';
@@ -16,9 +17,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
-    final double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Stack(
@@ -123,14 +124,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         SizedBox(height: height * 0.14),
                         CommanButton(
                           fontColor: Colors.white,
-                          text: 'GET STARTED',
-                          color: Color.fromARGB(255, 142, 151, 253),
+                          text: 'SIGN UP',
+                          color: const Color.fromARGB(255, 142, 151, 253),
                           onClick: () {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(
-                                  builder: (context) => const WelcomeScreen(),
-                                ));
+                                PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: WelcomeScreen()));
                           },
                         ),
                       ],
