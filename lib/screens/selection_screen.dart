@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:meditaion_app/screens/second_homescreen.dart';
+import 'package:meditaion_app/model/list_model.dart';
+import 'package:meditaion_app/screens/reminder_screen.dart';
+
 import 'package:page_transition/page_transition.dart';
 
 class SelectionScreen extends StatefulWidget {
@@ -12,61 +14,66 @@ class SelectionScreen extends StatefulWidget {
 }
 
 class _SelectionScreenState extends State<SelectionScreen> {
-  List<Color> colorList = [
-    const Color.fromARGB(255, 142, 151, 253),
-    const Color.fromARGB(255, 250, 110, 90),
-    const Color.fromARGB(255, 254, 177, 143),
-    const Color.fromARGB(255, 255, 207, 134),
-    const Color.fromARGB(255, 108, 170, 142),
-    const Color.fromARGB(255, 78, 85, 103),
-    const Color.fromARGB(255, 217, 165, 181),
-  ];
-  final List<String> imageList = [
-    'assets/image1.svg',
-    'assets/image2.svg',
-    'assets/image3.svg',
-    'assets/image4.svg',
-    'assets/image5.svg',
-    'assets/image6.svg',
-    'assets/image7.svg',
-  ];
-  List<String> textList = [
-    'Reduce\nStress',
-    'Improve\nPerformance',
-    'Increase\nHappiness',
-    'Reduce\nAnxiety',
-    'Personal\nGrowth',
-    'Better\nSleep',
-    'Focus on\nGoal',
-  ];
-  List<Color> fontColorList = [
-    const Color(0xFFFEF9F3),
-    const Color(0xFFFEF9F3),
-    const Color(0xFF3F414E),
-    const Color(0xFF3F414E),
-    const Color(0xFFFFECCC),
-    const Color(0xFFEBEAEC),
-    const Color(0xFFFFECCC),
+  final List<CustomList> listData = [
+    CustomList(
+      bgColor: const Color.fromARGB(255, 142, 151, 253),
+      text: 'Reduce\nStress',
+      fontColor: const Color(0xFFFEF9F3),
+      imgData: 'assets/image1.svg',
+    ),
+    CustomList(
+      bgColor: const Color.fromARGB(255, 250, 110, 90),
+      text: 'Improve\nPerformance',
+      fontColor: const Color(0xFFFEF9F3),
+      imgData: 'assets/image2.svg',
+    ),
+    CustomList(
+      bgColor: const Color.fromARGB(255, 254, 177, 143),
+      text: 'Increase\nHappiness',
+      fontColor: const Color(0xFF3F414E),
+      imgData: 'assets/image3.svg',
+    ),
+    CustomList(
+      bgColor: const Color.fromARGB(255, 255, 207, 134),
+      text: 'Reduce\nAnxiety',
+      fontColor: const Color(0xFF3F414E),
+      imgData: 'assets/image4.svg',
+    ),
+    CustomList(
+      bgColor: const Color.fromARGB(255, 108, 170, 142),
+      text: 'Personal\nGrowth',
+      fontColor: const Color(0xFFFFECCC),
+      imgData: 'assets/image5.svg',
+    ),
+    CustomList(
+      bgColor: const Color.fromARGB(255, 78, 85, 103),
+      text: 'Better\nSleep',
+      fontColor: const Color(0xFFEBEAEC),
+      imgData: 'assets/image6.svg',
+    ),
+    CustomList(
+      bgColor: const Color.fromARGB(255, 217, 165, 181),
+      text: 'Focus on\nGoal',
+      fontColor: const Color(0xFFFFECCC),
+      imgData: 'assets/image7.svg',
+    ),
   ];
 
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
+      appBar: AppBar(),
       body: Stack(
         children: [
-          SvgPicture.asset(
-            'assets/Union.svg',
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: double.infinity,
+          Positioned.fill(
+            child: SvgPicture.asset(
+              'assets/Union.svg',
+              fit: BoxFit.cover,
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -84,6 +91,9 @@ class _SelectionScreenState extends State<SelectionScreen> {
                       fontSize: 28,
                       fontWeight: FontWeight.w200),
                 ),
+                SizedBox(
+                  height: height * 0.01,
+                ),
                 const Text(
                   'Choose a topic to focus on:',
                   style: TextStyle(
@@ -91,29 +101,32 @@ class _SelectionScreenState extends State<SelectionScreen> {
                       fontSize: 20,
                       fontWeight: FontWeight.w100),
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: height * 0.02,
                 ),
                 Expanded(
                   child: MasonryGridView.builder(
+                    scrollDirection: Axis.vertical,
                     shrinkWrap: true,
                     crossAxisSpacing: 8,
                     mainAxisSpacing: 8,
-                    itemCount: colorList.length,
+                    itemCount: listData.length,
                     gridDelegate:
                         const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2),
                     itemBuilder: (context, index) {
-                      return GestureDetector(onTap: (){
-                        Navigator.push(
-                            context,
-                            PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: SecondHomeScreen()));
-                      },
+                      final item = listData[index];
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.rightToLeft,
+                                  child: ReminderScreen()));
+                        },
                         child: Card(
                           elevation: 7,
-                          color: colorList[index % colorList.length],
+                          color: item.bgColor,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -121,16 +134,15 @@ class _SelectionScreenState extends State<SelectionScreen> {
                               Padding(
                                 padding: const EdgeInsets.all(10),
                                 child: SvgPicture.asset(
-                                  imageList[index],
+                                  item.imgData as String,
                                   fit: BoxFit.cover,
                                 ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(10.0),
-                                child: Text(textList[index],
+                                child: Text(item.text as String,
                                     style: TextStyle(
-                                        color: fontColorList[
-                                            index % fontColorList.length],
+                                        color: item.fontColor,
                                         fontSize: 16,
                                         fontWeight: FontWeight.w500)),
                               ),

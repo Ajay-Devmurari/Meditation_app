@@ -1,11 +1,22 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:meditaion_app/screens/home_screen.dart';
-import 'package:meditaion_app/screens/reminder_screen.dart';
+import 'package:meditaion_app/screens/course_screen.dart';
 
+import 'package:meditaion_app/screens/home_screen.dart';
+import 'package:meditaion_app/screens/maditate_screen.dart';
+import 'package:meditaion_app/screens/navigationbar_screen.dart';
+import 'package:meditaion_app/screens/reminder_screen.dart';
+import 'package:meditaion_app/screens/second_homescreen.dart';
 import 'package:meditaion_app/screens/selection_screen.dart';
+import 'package:meditaion_app/screens/welcome_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -34,9 +45,9 @@ class MyApp extends StatelessWidget {
           // tested with just a hot reload.
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
+          // appBarTheme: AppBarTheme(backgroundColor: Colors.white)
         ),
-        // home: const SignUpScreen(),
-        routes: {'/': (context) =>  SelectionScreen()});
+        home: HomeScreen());
   }
 }
 

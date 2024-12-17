@@ -15,12 +15,14 @@ class WelcomeScreen extends StatelessWidget {
 
     return Scaffold(
       body: Stack(children: [
-        SvgPicture.asset(
-          'assets/welcome.svg',
-          fit: BoxFit.cover,
+        Positioned.fill(
+          child: SvgPicture.asset(
+            'assets/welcome.svg',
+            fit: BoxFit.cover,
+          ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
               Padding(
@@ -43,7 +45,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: height * 0.10,
+                height: height * 0.08,
               ),
               RichText(
                 text: const TextSpan(
@@ -85,16 +87,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(
-                height: height * 0.10,
-              ),
-              SvgPicture.asset(
-                'assets/lady.svg',
-                fit: BoxFit.cover,
-              ),
-              SizedBox(
-                height: height * 0.14,
-              ),
+              Spacer(),
               CommanButton(
                 color: Colors.white,
                 fontColor: Colors.black,
@@ -106,6 +99,8 @@ class WelcomeScreen extends StatelessWidget {
                           type: PageTransitionType.rightToLeft,
                           child: SelectionScreen()));
                 },
+              ), SizedBox(
+                height: height * 0.02,
               ),
             ],
           ),

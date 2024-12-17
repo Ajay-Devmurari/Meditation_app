@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class CommanButton extends StatelessWidget {
   const CommanButton(
       {super.key,
@@ -17,7 +16,7 @@ class CommanButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 62,
+      height: 52,
       width: double.infinity,
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
