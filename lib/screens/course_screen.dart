@@ -276,36 +276,3 @@ class _CourseScreenState extends State<CourseScreen> {
   }
 }
 
-/*    SizedBox(
-                  height: ht * 0.28,
-                  child: ListView.builder(
-                    itemCount: playListData.length,
-                    itemBuilder: (context, index) {
-                      final item = playListData[index];
-                      return ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: item.bgColor,
-                          child: Icon(
-                            item.icon,
-                            color: Colors.white,
-                          ),
-                        ),
-                        title: Text(
-                          item.mainText,
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 63, 65, 78),
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700),
-                        ),
-                        subtitle: Text(
-                          item.secondText,
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 161, 164, 178),
-                              fontSize: 12,
-                              fontWeight: FontWeight.w700),
-                        ),
-                        onTap: () {},
-                      );
-                    },
-                  ),
-                ),*/

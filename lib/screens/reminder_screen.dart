@@ -23,7 +23,18 @@ class _ReminderScreenState extends State<ReminderScreen> {
   Widget build(BuildContext context) {
     final ht = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SelectionScreen(),
+                  ));
+            },
+            icon: Icon(Icons.arrow_back_rounded)),
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(

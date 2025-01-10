@@ -4,6 +4,7 @@ import 'package:meditaion_app/screens/course_screen.dart';
 
 import 'package:meditaion_app/screens/home_screen.dart';
 import 'package:meditaion_app/screens/maditate_screen.dart';
+import 'package:meditaion_app/screens/music_screen.dart';
 import 'package:meditaion_app/screens/navigationbar_screen.dart';
 import 'package:meditaion_app/screens/reminder_screen.dart';
 import 'package:meditaion_app/screens/second_homescreen.dart';

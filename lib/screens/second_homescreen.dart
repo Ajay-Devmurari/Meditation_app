@@ -3,6 +3,7 @@ import 'package:meditaion_app/cards/custom_card.dart';
 import 'package:meditaion_app/screens/course_screen.dart';
 
 import 'package:meditaion_app/screens/navigationbar_screen.dart';
+import 'package:meditaion_app/screens/reminder_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SecondHomeScreen extends StatefulWidget {
@@ -17,7 +18,18 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
   Widget build(BuildContext context) {
     final ht = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ReminderScreen(),
+            ),
+          ),
+          icon: Icon(Icons.arrow_back),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(

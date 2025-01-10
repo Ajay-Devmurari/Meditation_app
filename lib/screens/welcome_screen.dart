@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:meditaion_app/screens/login_screen.dart';
 import 'package:meditaion_app/screens/selection_screen.dart';
 import 'package:meditaion_app/screens/signup_screen.dart';
 import 'package:page_transition/page_transition.dart';
@@ -30,17 +31,16 @@ class WelcomeScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text('S i l e n t  ',
+                    Text('S i l e n t ',
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
-                    SvgPicture.asset(
-                      "assets/logo.svg",
-                      height: 20,
-                      width: 20,
-                    ),
-                    const Text('  M o o n',
+                            fontSize: height * 0.03,
+                            fontWeight: FontWeight.bold)),
+                    SvgPicture.asset("assets/logo.svg",
+                        fit: BoxFit.cover, height: height * 0.03),
+                    Text('  M o o n',
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
+                            fontSize: height * 0.03,
+                            fontWeight: FontWeight.bold)),
                   ],
                 ),
               ),
@@ -99,7 +99,8 @@ class WelcomeScreen extends StatelessWidget {
                           type: PageTransitionType.rightToLeft,
                           child: SelectionScreen()));
                 },
-              ), SizedBox(
+              ),
+              SizedBox(
                 height: height * 0.02,
               ),
             ],

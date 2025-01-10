@@ -3,6 +3,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditaion_app/model/madi_card.dart';
 import 'package:meditaion_app/model/maditate_model.dart';
+import 'package:meditaion_app/screens/course_screen.dart';
 
 import 'package:meditaion_app/screens/second_homescreen.dart';
 import 'package:page_transition/page_transition.dart';
@@ -70,7 +71,18 @@ class _MaditateScreenState extends State<MaditateScreen> {
   Widget build(BuildContext context) {
     final ht = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CourseScreen(),
+                  ));
+            },
+            icon: Icon(Icons.arrow_back_rounded)),
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(

@@ -35,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: SvgPicture.asset(
                   'assets/relax_lady.svg',
                   fit: BoxFit.cover,
+                  height: height * 0.3,
                 ),
               ),
               Padding(
@@ -42,16 +43,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text('S i l e n t  ',
+                     Text('S i l e n t ',
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
+                            fontSize: height * 0.03, fontWeight: FontWeight.bold)),
                     SvgPicture.asset(
                       "assets/logo.svg",
-                      fit: BoxFit.cover,
+                      fit: BoxFit.cover, height : height * 0.03
                     ),
-                    const Text('  M o o n',
+                     Text('  M o o n',
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
+                            fontSize: height * 0.03, fontWeight: FontWeight.bold)),
                   ],
                 ),
               ),
@@ -111,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: const Text('SIGN UP'))
             ],
           ),
-          SizedBox(height: height * 0.02),
+          // SizedBox(height: height * 0.02),
         ],
       ),
     );

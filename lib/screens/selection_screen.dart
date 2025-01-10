@@ -3,6 +3,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditaion_app/model/list_model.dart';
 import 'package:meditaion_app/screens/reminder_screen.dart';
+import 'package:meditaion_app/screens/welcome_screen.dart';
 
 import 'package:page_transition/page_transition.dart';
 
@@ -63,7 +64,18 @@ class _SelectionScreenState extends State<SelectionScreen> {
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => WelcomeScreen(),
+                  ));
+            },
+            icon: Icon(Icons.arrow_back_rounded)),
+      ),
       body: Stack(
         children: [
           Positioned.fill(
