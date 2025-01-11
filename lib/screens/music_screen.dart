@@ -5,14 +5,14 @@ import 'package:meditaion_app/screens/maditate_screen.dart';
 import 'package:meditaion_app/screens/selection_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
-class MusciScreen extends StatefulWidget {
-  const MusciScreen({super.key});
+class MusicScreen extends StatefulWidget {
+  const MusicScreen({super.key});
 
   @override
-  State<MusciScreen> createState() => _MusciScreenState();
+  State<MusicScreen> createState() => _MusicScreenState();
 }
 
-class _MusciScreenState extends State<MusciScreen> {
+class _MusicScreenState extends State<MusicScreen> {
   late AudioPlayer _audioPlayer;
 
   @override

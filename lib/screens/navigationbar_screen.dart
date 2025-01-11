@@ -15,7 +15,7 @@ class _NavigationbarScreenState extends State<NavigationbarScreen> {
   int _currentIndex = 0;
   final List<Widget> pages = [
     const MaditateScreen(),
-    const MusciScreen(),
+    const MusicScreen(),
     const SettingScreen(),
     const UserScreen(),
   ];
