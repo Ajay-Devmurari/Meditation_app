@@ -103,7 +103,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: CommanButton(
@@ -115,7 +115,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     context,
                     PageTransition(
                         type: PageTransitionType.rightToLeft,
-                        child: WelcomeScreen()));
+                        child: const WelcomeScreen()));
               },
             ),
           ),

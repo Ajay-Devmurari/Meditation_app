@@ -71,10 +71,10 @@ class _SelectionScreenState extends State<SelectionScreen> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => WelcomeScreen(),
+                    builder: (context) => const WelcomeScreen(),
                   ));
             },
-            icon: Icon(Icons.arrow_back_rounded)),
+            icon: const Icon(Icons.arrow_back_rounded)),
       ),
       body: Stack(
         children: [
@@ -134,7 +134,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
                               context,
                               PageTransition(
                                   type: PageTransitionType.rightToLeft,
-                                  child: ReminderScreen()));
+                                  child: const ReminderScreen()));
                         },
                         child: Card(
                           elevation: 7,

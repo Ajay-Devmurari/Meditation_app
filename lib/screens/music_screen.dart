@@ -30,11 +30,11 @@ class _MusciScreenState extends State<MusciScreen> {
 
   void _skipForward() async {
     _audioPlayer
-        .seek(await _audioPlayer.position + const Duration(seconds: 10));
+        .seek(_audioPlayer.position + const Duration(seconds: 10));
   }
 
   void _skipBackward() async {
-    final currentPosition = await _audioPlayer.position;
+    final currentPosition =  _audioPlayer.position;
     _audioPlayer.seek(
       currentPosition - const Duration(seconds: 10) < Duration.zero
           ? Duration.zero
@@ -47,7 +47,7 @@ class _MusciScreenState extends State<MusciScreen> {
     return Scaffold(
         body: Stack(
       children: [
-        Container(
+        SizedBox(
           height: double.infinity,
           width: double.infinity,
           child: SvgPicture.asset(
@@ -68,19 +68,19 @@ class _MusciScreenState extends State<MusciScreen> {
                     context,
                     PageTransition(
                         type: PageTransitionType.rightToLeft,
-                        child: MaditateScreen())),
+                        child: const MaditateScreen())),
               ),
-              Spacer(),
+              const Spacer(),
               buildIcon(
-                  Color.fromARGB(255, 196, 197, 202),
+                  const Color.fromARGB(255, 196, 197, 202),
                   Icons.favorite_border_outlined,
                   Colors.white,
-                  () => SelectionScreen()),
-              SizedBox(
+                  () => const SelectionScreen()),
+              const SizedBox(
                 width: 20,
               ),
-              buildIcon(Color.fromARGB(255, 196, 197, 202), Icons.download,
-                  Colors.white, () => SelectionScreen()),
+              buildIcon(const Color.fromARGB(255, 196, 197, 202), Icons.download,
+                  Colors.white, () => const SelectionScreen()),
             ],
           ),
         ),
@@ -88,24 +88,24 @@ class _MusciScreenState extends State<MusciScreen> {
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Focus Attention',
               style: TextStyle(
                   fontSize: 34,
                   color: Color.fromARGB(255, 63, 65, 78),
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
-            Text(
+            const Text(
               'Calm Radiance',
               style: TextStyle(
                   fontSize: 22,
                   color: Color.fromARGB(255, 160, 163, 177),
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             StreamBuilder<Duration>(
@@ -129,14 +129,14 @@ class _MusciScreenState extends State<MusciScreen> {
                 );
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 IconButton(
-                    icon: Icon(Icons.replay_10),
+                    icon: const Icon(Icons.replay_10),
                     iconSize: 40,
                     onPressed: _skipBackward),
                 IconButton(
@@ -157,7 +157,7 @@ class _MusciScreenState extends State<MusciScreen> {
                   },
                 ),
                 IconButton(
-                    icon: Icon(Icons.forward_10),
+                    icon: const Icon(Icons.forward_10),
                     iconSize: 40,
                     onPressed: _skipForward),
               ],

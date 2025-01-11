@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meditaion_app/cards/custom_card.dart';
 import 'package:meditaion_app/screens/course_screen.dart';
 
-import 'package:meditaion_app/screens/navigationbar_screen.dart';
+
 import 'package:meditaion_app/screens/reminder_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -24,10 +24,10 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
           onPressed: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => ReminderScreen(),
+              builder: (context) => const ReminderScreen(),
             ),
           ),
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
         ),
       ),
       body: Padding(
@@ -51,46 +51,46 @@ class _SecondHomeScreenState extends State<SecondHomeScreen> {
               ),
             ),
             SizedBox(height: ht * 0.01),
-            Container(
+            SizedBox(
               height: ht * 0.24,
               child: CustomCard(
-                  buttonColor: Color.fromARGB(255, 235, 234, 236),
+                  buttonColor: const Color.fromARGB(255, 235, 234, 236),
                   bgColor: const Color.fromARGB(255, 142, 141, 253),
                   img: 'assets/heart.svg',
                   text: 'Basic',
                   secondText: 'COURSE',
                   thirdText: '3:10 MIN',
                   fourthText: 'START',
-                  textColor: Color.fromARGB(255, 63, 65, 78),
+                  textColor: const Color.fromARGB(255, 63, 65, 78),
                   onTap: () {
                     Navigator.push(
                         context,
                         PageTransition(
                             type: PageTransitionType.rightToLeft,
-                            child: CourseScreen()));
+                            child: const CourseScreen()));
                   }),
             ),
             SizedBox(height: ht * 0.02),
-            Container(
+            SizedBox(
               height: ht * 0.24,
               child: CustomCard(
-                  buttonColor: Color.fromARGB(255, 63, 65, 78),
+                  buttonColor: const Color.fromARGB(255, 63, 65, 78),
                   bgColor: const Color.fromARGB(255, 255, 201, 126),
                   img: 'assets/happy_lady.svg',
                   text: 'Relaxation',
                   secondText: 'MUSIC',
                   thirdText: '3:10 MIN',
                   fourthText: 'START',
-                  textColor: Color.fromARGB(255, 254, 255, 254),
+                  textColor: const Color.fromARGB(255, 254, 255, 254),
                   onTap: () {
                     Navigator.push(
                         context,
                         PageTransition(
                             type: PageTransitionType.rightToLeft,
-                            child: CourseScreen()));
+                            child: const CourseScreen()));
                   }),
             ),
-            Spacer(),
+            const Spacer(),
             const Text(
               'Recommended for you',
               style: TextStyle(

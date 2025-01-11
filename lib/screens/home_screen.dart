@@ -17,7 +17,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
-    final double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       body: Column(
@@ -90,13 +89,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         context,
                         PageTransition(
                             type: PageTransitionType.rightToLeft,
-                            child: LoginScreen()));
+                            child: const LoginScreen()));
                   },
                 ),
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -107,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         context,
                         PageTransition(
                             type: PageTransitionType.rightToLeft,
-                            child: SignUpScreen()));
+                            child: const SignUpScreen()));
                   },
                   child: const Text('SIGN UP'))
             ],

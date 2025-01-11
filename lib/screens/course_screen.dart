@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditaion_app/model/playlist_model.dart';
-import 'package:meditaion_app/screens/maditate_screen.dart';
 import 'package:meditaion_app/screens/navigationbar_screen.dart';
 import 'package:meditaion_app/screens/second_homescreen.dart';
 import 'package:page_transition/page_transition.dart';
@@ -19,27 +18,27 @@ class _CourseScreenState extends State<CourseScreen> {
         mainText: 'Focus Attention',
         secondText: '10 MIN',
         icon: Icons.play_arrow_rounded,
-        bgColor: Color.fromARGB(255, 142, 151, 253)),
+        bgColor: const Color.fromARGB(255, 142, 151, 253)),
     PlayList(
         mainText: 'Relax & Breathe',
         secondText: '8 MIN',
         icon: Icons.air_rounded,
-        bgColor: Color.fromARGB(255, 251, 220, 138)),
+        bgColor: const Color.fromARGB(255, 251, 220, 138)),
     PlayList(
         mainText: 'Mindful Walking',
         secondText: '12 MIN',
         icon: Icons.directions_walk_rounded,
-        bgColor: Color.fromARGB(255, 173, 243, 183)),
+        bgColor: const Color.fromARGB(255, 173, 243, 183)),
     PlayList(
         mainText: 'Deep Sleep',
         secondText: '15 MIN',
         icon: Icons.nightlight_round,
-        bgColor: Color.fromARGB(255, 153, 201, 255)),
+        bgColor: const Color.fromARGB(255, 153, 201, 255)),
     PlayList(
         mainText: 'Stress Relief',
         secondText: '7 MIN',
         icon: Icons.sentiment_satisfied_rounded,
-        bgColor: Color.fromARGB(255, 253, 181, 201)),
+        bgColor: const Color.fromARGB(255, 253, 181, 201)),
   ];
 
   @override
@@ -53,7 +52,7 @@ class _CourseScreenState extends State<CourseScreen> {
             alignment: Alignment.topCenter,
             children: [
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: Color.fromARGB(255, 68, 67, 89),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(20),
@@ -61,7 +60,7 @@ class _CourseScreenState extends State<CourseScreen> {
                 width: double.infinity,
                 height: ht * 0.4,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(20),
                       bottomRight: Radius.circular(20)),
                   child: SvgPicture.asset(
@@ -77,27 +76,27 @@ class _CourseScreenState extends State<CourseScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     buildIcon(
-                      Color.fromARGB(255, 242, 242, 242),
+                      const Color.fromARGB(255, 242, 242, 242),
                       Icons.arrow_back_rounded,
                       Colors.black,
                       () => Navigator.push(
                           context,
                           PageTransition(
                               type: PageTransitionType.rightToLeft,
-                              child: SecondHomeScreen())),
+                              child: const SecondHomeScreen())),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     buildIcon(
-                      Color.fromARGB(152, 3, 23, 76),
+                      const Color.fromARGB(152, 3, 23, 76),
                       Icons.favorite_border_outlined,
                       Colors.white,
-                      () => null,
+                      () {},
                     ),
                     SizedBox(
                       width: ht * 0.01,
                     ),
                     buildIcon(
-                      Color.fromARGB(152, 3, 23, 76),
+                      const Color.fromARGB(152, 3, 23, 76),
                       Icons.arrow_forward_rounded,
                       Colors.white,
                       () {
@@ -105,7 +104,7 @@ class _CourseScreenState extends State<CourseScreen> {
                             context,
                             PageTransition(
                                 type: PageTransitionType.rightToLeft,
-                                child: NavigationbarScreen()));
+                                child: const NavigationbarScreen()));
                       },
                     ),
                   ],
@@ -121,7 +120,7 @@ class _CourseScreenState extends State<CourseScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Happy Morning',
                   style: TextStyle(
                       fontSize: 26,
@@ -131,7 +130,7 @@ class _CourseScreenState extends State<CourseScreen> {
                 SizedBox(
                   height: ht * 0.01,
                 ),
-                Text(
+                const Text(
                   'COURSE',
                   style: TextStyle(
                       fontSize: 12,
@@ -141,7 +140,7 @@ class _CourseScreenState extends State<CourseScreen> {
                 SizedBox(
                   height: ht * 0.01,
                 ),
-                Text(
+                const Text(
                   'Ease the mind into a restful night’s sleep  with\nthese deep, amblent tones.',
                   style: TextStyle(
                       fontSize: 14, color: Color.fromARGB(255, 161, 164, 178)),
@@ -152,14 +151,14 @@ class _CourseScreenState extends State<CourseScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.favorite,
                       color: Color.fromARGB(255, 255, 132, 162),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 4,
                     ),
-                    Text(
+                    const Text(
                       '24.234 Favorits',
                       style: TextStyle(
                           fontSize: 14,
@@ -169,14 +168,14 @@ class _CourseScreenState extends State<CourseScreen> {
                     SizedBox(
                       width: wt * 0.12,
                     ),
-                    Icon(
+                    const Icon(
                       Icons.headphones,
                       color: Color.fromARGB(255, 127, 210, 242),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 4,
                     ),
-                    Text(
+                    const Text(
                       '34.234 Lestening',
                       style: TextStyle(
                           fontSize: 14,
@@ -188,7 +187,7 @@ class _CourseScreenState extends State<CourseScreen> {
                 SizedBox(
                   height: ht * 0.02,
                 ),
-                Text(
+                const Text(
                   'Pick a Instructor',
                   style: TextStyle(
                       fontSize: 20,
@@ -200,7 +199,7 @@ class _CourseScreenState extends State<CourseScreen> {
                 ),
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       'MALE VOICE',
                       style: TextStyle(
                           fontSize: 16,
@@ -210,7 +209,7 @@ class _CourseScreenState extends State<CourseScreen> {
                     SizedBox(
                       width: wt * 0.22,
                     ),
-                    Text(
+                    const Text(
                       'FEMALE VOICE',
                       style: TextStyle(
                           fontSize: 16,
@@ -219,7 +218,7 @@ class _CourseScreenState extends State<CourseScreen> {
                     ),
                   ],
                 ),
-                Divider(),
+                const Divider(),
               ],
             ),
           ),
@@ -238,14 +237,14 @@ class _CourseScreenState extends State<CourseScreen> {
                   ),
                   title: Text(
                     item.mainText,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Color.fromARGB(255, 63, 65, 78),
                         fontSize: 16,
                         fontWeight: FontWeight.w700),
                   ),
                   subtitle: Text(
                     item.secondText,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Color.fromARGB(255, 161, 164, 178),
                         fontSize: 10,
                         fontWeight: FontWeight.w700),

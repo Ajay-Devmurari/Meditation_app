@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meditaion_app/screens/maditate_screen.dart';
 import 'package:meditaion_app/screens/user_screen.dart';
 import 'music_screen.dart';
-import 'SettingScreen.dart';
+import 'setting_screen.dart';
 
 class NavigationbarScreen extends StatefulWidget {
   const NavigationbarScreen({super.key});
@@ -14,10 +14,10 @@ class NavigationbarScreen extends StatefulWidget {
 class _NavigationbarScreenState extends State<NavigationbarScreen> {
   int _currentIndex = 0;
   final List<Widget> pages = [
-    MaditateScreen(),
-    MusciScreen(),
-    Settingscreen(),
-    UserScreen(),
+    const MaditateScreen(),
+    const MusciScreen(),
+    const SettingScreen(),
+    const UserScreen(),
   ];
 
   @override
@@ -26,7 +26,7 @@ class _NavigationbarScreenState extends State<NavigationbarScreen> {
       body: pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         elevation: 7,
-        selectedItemColor: Color.fromARGB(255, 3, 150, 255),
+        selectedItemColor: const Color.fromARGB(255, 3, 150, 255),
         unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.shifting,
         currentIndex: _currentIndex,

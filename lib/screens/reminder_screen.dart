@@ -30,10 +30,10 @@ class _ReminderScreenState extends State<ReminderScreen> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SelectionScreen(),
+                    builder: (context) => const SelectionScreen(),
                   ));
             },
-            icon: Icon(Icons.arrow_back_rounded)),
+            icon: const Icon(Icons.arrow_back_rounded)),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -101,7 +101,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
             SizedBox(
               height: ht * 0.02,
             ),
-            Container(
+            SizedBox(
               height: ht * 0.08,
               width: double.infinity,
               child: ListView.builder(
@@ -115,7 +115,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
                       });
                     },
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 8.0),
+                      margin: const EdgeInsets.symmetric(horizontal: 8.0),
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
@@ -146,7 +146,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
                 },
               ),
             ),
-            Spacer(),
+            const Spacer(),
             CommanButton(
               fontColor: Colors.white,
               text: 'SAVE',
@@ -156,7 +156,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
                     context,
                     PageTransition(
                         type: PageTransitionType.rightToLeft,
-                        child: SecondHomeScreen()));
+                        child: const SecondHomeScreen()));
               },
             ),
             SizedBox(

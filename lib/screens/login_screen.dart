@@ -86,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         context,
                         PageTransition(
                             type: PageTransitionType.rightToLeft,
-                            child: WelcomeScreen()));
+                            child: const WelcomeScreen()));
                   },
                 ),
                 SizedBox(
@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         context,
                         PageTransition(
                             type: PageTransitionType.rightToLeft,
-                            child: SignUpScreen()));
+                            child: const SignUpScreen()));
                   },
                   child: const Text('SIGN UP'))
             ],

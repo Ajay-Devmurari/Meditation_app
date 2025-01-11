@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:meditaion_app/screens/login_screen.dart';
 import 'package:meditaion_app/screens/selection_screen.dart';
-import 'package:meditaion_app/screens/signup_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../Buttons/comman_button.dart';
@@ -87,7 +85,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              Spacer(),
+              const Spacer(),
               CommanButton(
                 color: Colors.white,
                 fontColor: Colors.black,
@@ -97,7 +95,7 @@ class WelcomeScreen extends StatelessWidget {
                       context,
                       PageTransition(
                           type: PageTransitionType.rightToLeft,
-                          child: SelectionScreen()));
+                          child: const SelectionScreen()));
                 },
               ),
               SizedBox(

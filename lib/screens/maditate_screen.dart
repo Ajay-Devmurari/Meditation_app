@@ -9,42 +9,42 @@ import 'package:meditaion_app/screens/second_homescreen.dart';
 import 'package:page_transition/page_transition.dart';
 
 class MaditateScreen extends StatefulWidget {
-  MaditateScreen({super.key});
+  const MaditateScreen({super.key});
 
   @override
   State<MaditateScreen> createState() => _MaditateScreenState();
 }
 
 class _MaditateScreenState extends State<MaditateScreen> {
-  final List<MaditateList> MaditateListData = [
+  final List<MaditateList>  maditateListData = [
     MaditateList(
         text: 'All',
-        bgColor: Color.fromARGB(255, 142, 151, 253),
+        bgColor: const Color.fromARGB(255, 142, 151, 253),
         imgData: 'assets/all.svg'),
     MaditateList(
         text: 'My',
-        bgColor: Color.fromARGB(255, 160, 163, 177),
+        bgColor: const Color.fromARGB(255, 160, 163, 177),
         imgData: 'assets/fav.svg'),
     MaditateList(
         text: 'Anxious',
-        bgColor: Color.fromARGB(255, 160, 163, 177),
+        bgColor: const Color.fromARGB(255, 160, 163, 177),
         imgData: 'assets/sad.svg'),
     MaditateList(
         text: 'Sleep',
-        bgColor: Color.fromARGB(255, 160, 163, 177),
+        bgColor: const Color.fromARGB(255, 160, 163, 177),
         imgData: 'assets/sleep.svg'),
     MaditateList(
         text: 'Kids',
-        bgColor: Color.fromARGB(255, 160, 163, 177),
+        bgColor: const Color.fromARGB(255, 160, 163, 177),
         imgData: 'assets/kids.svg'),
     MaditateList(
         text: 'Yoga',
-        bgColor: Color.fromARGB(255, 160, 163, 177),
+        bgColor: const Color.fromARGB(255, 160, 163, 177),
         imgData: 'assets/yoga.svg',
         iconColor: Colors.white),
     MaditateList(
         text: 'Morning',
-        bgColor: Color.fromARGB(255, 160, 163, 177),
+        bgColor: const Color.fromARGB(255, 160, 163, 177),
         imgData: 'assets/morning.svg',
         iconColor: Colors.white),
   ];
@@ -78,10 +78,10 @@ class _MaditateScreenState extends State<MaditateScreen> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => CourseScreen(),
+                    builder: (context) => const CourseScreen(),
                   ));
             },
-            icon: Icon(Icons.arrow_back_rounded)),
+            icon: const Icon(Icons.arrow_back_rounded)),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -89,7 +89,7 @@ class _MaditateScreenState extends State<MaditateScreen> {
           children: [
             Column(
               children: [
-                Text(
+                const Text(
                   'Meditate',
                   style: TextStyle(
                     color: Color.fromARGB(255, 63, 65, 78),
@@ -100,7 +100,7 @@ class _MaditateScreenState extends State<MaditateScreen> {
                 SizedBox(
                   height: ht * 0.02,
                 ),
-                Text(
+                const Text(
                   'We can learn how to recognize when our minds\nare doing their normal everyday acrobatics.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -114,17 +114,19 @@ class _MaditateScreenState extends State<MaditateScreen> {
                 ),
               ],
             ),
-            Container(height: ht * 0.16,
+            SizedBox(height: ht * 0.16,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: MaditateListData.length,
+                  itemCount: maditateListData.length,
                   itemBuilder: (context, index) {
-                    final item = MaditateListData[index];
+                    final item = maditateListData[index];
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 5),
                       child: Column(
                         children: [
                           CircleAvatar(
+                            backgroundColor: item.bgColor,
+                            radius: 28,
                             child: SvgPicture.asset(
                               item.imgData,
                               color: item.iconColor,
@@ -132,15 +134,13 @@ class _MaditateScreenState extends State<MaditateScreen> {
                               width: 22,
                               fit: BoxFit.cover,
                             ),
-                            backgroundColor: item.bgColor,
-                            radius: 28,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
                           Text(
                             item.text,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
                                 color: Color.fromARGB(255, 63, 65, 78)),
@@ -151,15 +151,15 @@ class _MaditateScreenState extends State<MaditateScreen> {
                   }),
             ),
             singleCard(),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Expanded(
                 child: MasonryGridView.builder(
-                    physics: BouncingScrollPhysics(),
+                    physics: const BouncingScrollPhysics(),
 
                     gridDelegate:
-                        SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                        const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2),
                     itemCount: customMadiCard.length,
                     shrinkWrap: true,
@@ -173,7 +173,7 @@ class _MaditateScreenState extends State<MaditateScreen> {
                               context,
                               PageTransition(
                                   type: PageTransitionType.rightToLeft,
-                                  child: SecondHomeScreen()));
+                                  child: const SecondHomeScreen()));
                         },
                         child: Stack(
                           children: [
@@ -185,17 +185,17 @@ class _MaditateScreenState extends State<MaditateScreen> {
                               ),
                             ),
                             Positioned(
+                              bottom: 12,
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 10.0),
                                 child: Text(
                                   item.text,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 18,
                                       color: Colors.white,
                                       fontWeight: FontWeight.w500),
                                 ),
                               ),
-                              bottom: 12,
                             ),
                           ],
                         ),
@@ -211,8 +211,8 @@ class _MaditateScreenState extends State<MaditateScreen> {
   Widget singleCard() {
     return Container(
       decoration: BoxDecoration(
-          color: Color.fromARGB(255, 241, 221, 207),
-          image: DecorationImage(
+          color: const Color.fromARGB(255, 241, 221, 207),
+          image: const DecorationImage(
               image: AssetImage('assets/music_bg2.png'), fit: BoxFit.cover),
           borderRadius: BorderRadius.circular(12)),
       height: 90,
