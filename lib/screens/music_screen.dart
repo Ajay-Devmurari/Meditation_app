@@ -29,12 +29,11 @@ class _MusicScreenState extends State<MusicScreen> {
   }
 
   void _skipForward() async {
-    _audioPlayer
-        .seek(_audioPlayer.position + const Duration(seconds: 10));
+    _audioPlayer.seek(_audioPlayer.position + const Duration(seconds: 10));
   }
 
   void _skipBackward() async {
-    final currentPosition =  _audioPlayer.position;
+    final currentPosition = _audioPlayer.position;
     _audioPlayer.seek(
       currentPosition - const Duration(seconds: 10) < Duration.zero
           ? Duration.zero
@@ -79,8 +78,8 @@ class _MusicScreenState extends State<MusicScreen> {
               const SizedBox(
                 width: 20,
               ),
-              buildIcon(const Color.fromARGB(255, 196, 197, 202), Icons.download,
-                  Colors.white, () => const SelectionScreen()),
+              buildIcon(const Color.fromARGB(255, 196, 197, 202),
+                  Icons.download, Colors.white, () => const SelectionScreen()),
             ],
           ),
         ),

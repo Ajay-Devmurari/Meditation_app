@@ -43,7 +43,8 @@ dependencies:
   page_transition: ^2.1.0
   font_awesome_flutter: ^10.8.0
   device_preview: ^1.2.0
-  just_audio:
+  just_audio: ^0.10.3
+
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +71,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/
+     - assets/jalwa.mp3
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
