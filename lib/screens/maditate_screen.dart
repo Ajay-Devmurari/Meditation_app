@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:meditaion_app/model/madi_card.dart';
-import 'package:meditaion_app/model/maditate_model.dart';
-import 'package:meditaion_app/screens/course_screen.dart';
+import 'package:meditation/model/madi_card.dart';
+import 'package:meditation/model/maditate_model.dart';
+import 'package:meditation/screens/course_screen.dart';
 
-import 'package:meditaion_app/screens/second_homescreen.dart';
+import 'package:meditation/screens/second_homescreen.dart';
 import 'package:page_transition/page_transition.dart';
 
 class MaditateScreen extends StatefulWidget {
@@ -16,7 +16,7 @@ class MaditateScreen extends StatefulWidget {
 }
 
 class _MaditateScreenState extends State<MaditateScreen> {
-  final List<MaditateList>  maditateListData = [
+  final List<MaditateList> maditateListData = [
     MaditateList(
         text: 'All',
         bgColor: const Color.fromARGB(255, 142, 151, 253),
@@ -114,7 +114,8 @@ class _MaditateScreenState extends State<MaditateScreen> {
                 ),
               ],
             ),
-            SizedBox(height: ht * 0.16,
+            SizedBox(
+              height: ht * 0.16,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: maditateListData.length,
@@ -157,7 +158,6 @@ class _MaditateScreenState extends State<MaditateScreen> {
             Expanded(
                 child: MasonryGridView.builder(
                     physics: const BouncingScrollPhysics(),
-
                     gridDelegate:
                         const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2),
@@ -200,7 +200,6 @@ class _MaditateScreenState extends State<MaditateScreen> {
                           ],
                         ),
                       );
-
                     })),
           ],
         ),

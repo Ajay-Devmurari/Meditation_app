@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:meditaion_app/model/list_model.dart';
-import 'package:meditaion_app/screens/reminder_screen.dart';
-import 'package:meditaion_app/screens/welcome_screen.dart';
+import 'package:meditation/model/list_model.dart';
+import 'package:meditation/screens/reminder_screen.dart';
+import 'package:meditation/screens/welcome_screen.dart';
 
 import 'package:page_transition/page_transition.dart';
 

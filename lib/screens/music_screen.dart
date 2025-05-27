@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:meditaion_app/screens/maditate_screen.dart';
-import 'package:meditaion_app/screens/selection_screen.dart';
+import 'package:meditation/screens/maditate_screen.dart';
+import 'package:meditation/screens/selection_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
 class MusicScreen extends StatefulWidget {

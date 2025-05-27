@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meditaion_app/screens/maditate_screen.dart';
-import 'package:meditaion_app/screens/user_screen.dart';
+import 'package:meditation/screens/maditate_screen.dart';
+import 'package:meditation/screens/user_screen.dart';
 import 'music_screen.dart';
 import 'setting_screen.dart';
 

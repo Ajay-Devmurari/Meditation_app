@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:meditaion_app/screens/signup_screen.dart';
+import 'package:meditation/screens/signup_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../Buttons/comman_button.dart';
@@ -42,16 +42,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                     Text('S i l e n t ',
+                    Text('S i l e n t ',
                         style: TextStyle(
-                            fontSize: height * 0.03, fontWeight: FontWeight.bold)),
-                    SvgPicture.asset(
-                      "assets/logo.svg",
-                      fit: BoxFit.cover, height : height * 0.03
-                    ),
-                     Text('  M o o n',
+                            fontSize: height * 0.03,
+                            fontWeight: FontWeight.bold)),
+                    SvgPicture.asset("assets/logo.svg",
+                        fit: BoxFit.cover, height: height * 0.03),
+                    Text('  M o o n',
                         style: TextStyle(
-                            fontSize: height * 0.03, fontWeight: FontWeight.bold)),
+                            fontSize: height * 0.03,
+                            fontWeight: FontWeight.bold)),
                   ],
                 ),
               ),
@@ -76,7 +76,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text(
                   'for smalls meditation ',
                   style: TextStyle(fontSize: height * 0.02),
-
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: height * 0.02),

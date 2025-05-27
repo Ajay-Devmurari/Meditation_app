@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:meditaion_app/screens/selection_screen.dart';
+import 'package:meditation/screens/selection_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../Buttons/comman_button.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:meditaion_app/Buttons/circle_button.dart';
-import 'package:meditaion_app/screens/signup_screen.dart';
-import 'package:meditaion_app/screens/welcome_screen.dart';
+import 'package:meditation/Buttons/circle_button.dart';
+import 'package:meditation/screens/signup_screen.dart';
+import 'package:meditation/screens/welcome_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../Buttons/comman_button.dart';

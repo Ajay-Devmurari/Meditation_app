@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:meditaion_app/cards/custom_card.dart';
-import 'package:meditaion_app/screens/course_screen.dart';
+import 'package:meditation/cards/custom_card.dart';
+import 'package:meditation/screens/course_screen.dart';
 
-
-import 'package:meditaion_app/screens/reminder_screen.dart';
+import 'package:meditation/screens/reminder_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SecondHomeScreen extends StatefulWidget {
